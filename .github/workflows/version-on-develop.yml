@@ -1,0 +1,17 @@
+name: "Create SNAPSHOT Version on Develop"
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - develop
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  call-template:
+    uses: alexottonizup/git-flow-templates/.github/workflows/template-version-on-develop.yml@v1
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}

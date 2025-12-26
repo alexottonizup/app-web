@@ -1,0 +1,15 @@
+name: "Create Tag on Main"
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  call-template:
+    uses: alexottonizup/git-flow-templates/.github/workflows/template-create-tag-on-main.yml@v1
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}

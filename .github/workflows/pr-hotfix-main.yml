@@ -1,0 +1,16 @@
+name: "PR Hotfix → Main"
+
+on:
+  push:
+    branches:
+      - 'hotfix/**'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  call-template:
+    uses: alexottonizup/git-flow-templates/.github/workflows/template-pr-hotfix-main.yml@v1
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}

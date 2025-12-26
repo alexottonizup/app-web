@@ -1,0 +1,17 @@
+name: "PR Main → Develop after Hotfix"
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  call-template:
+    uses: alexottonizup/git-flow-templates/.github/workflows/template-pr-main-develop.yml@v1
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
