@@ -6,6 +6,10 @@ on:
       - "feature/**"
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pull-requests: write
+  
 jobs:
   pr-feature-develop:
     uses: org/git-flow-templates/.github/workflows/template-pr-feature-develop.yml@main
