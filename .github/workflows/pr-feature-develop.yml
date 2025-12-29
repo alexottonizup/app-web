@@ -1,18 +1,17 @@
-name: "PR Feature → Develop"
+name: "PR Feature → Develop (via template)"
 
 on:
   push:
     branches:
-      - 'feature/**'
-      - 'bugfix/**'
-      - 'hotfix/**'
+      - "feature/**"
+  workflow_dispatch:
 
 permissions:
   contents: write
   pull-requests: write
-
+  
 jobs:
-  call-template:
-    uses: alexottonizup/git-flow-templates/.github/workflows/template-pr-feature-develop.yml@v1
+  pr-feature-develop:
+    uses: alexottonizup/git-flow-templates/.github/workflows/template-pr-feature-develop.yml@main
     secrets:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
