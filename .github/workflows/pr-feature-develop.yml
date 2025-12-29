@@ -12,6 +12,6 @@ permissions:
   
 jobs:
   pr-feature-develop:
-    uses: org/git-flow-templates/.github/workflows/template-pr-feature-develop.yml@main
+    uses: alexottonizup/git-flow-templates/.github/workflows/template-pr-feature-develop.yml@main
     secrets:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
